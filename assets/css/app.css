@@ -1,0 +1,90 @@
+:root {
+    --primary: #2441e6;
+    --secondary: #0f172a;
+    --accent: #00a9a5;
+    --soft: #f4f7fb;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: var(--soft);
+    color: #22304a;
+}
+.auth-body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, rgba(36,65,230,.95), rgba(0,169,165,.85));
+}
+.auth-card,
+.card {
+    border-radius: 1rem;
+}
+.sidebar {
+    width: 280px;
+    min-height: 100vh;
+    background: linear-gradient(180deg, var(--secondary), #1e293b);
+}
+.sidebar-brand {
+    background: rgba(255,255,255,.04);
+}
+.sidebar .nav-link {
+    color: rgba(255,255,255,.82);
+    border-radius: .75rem;
+    margin-top: .35rem;
+    transition: .2s ease;
+}
+.sidebar .nav-link:hover {
+    background: rgba(255,255,255,.08);
+    color: #fff;
+    transform: translateX(4px);
+}
+.content {
+    min-height: 100vh;
+}
+.icon-circle,
+.stat-icon {
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(36,65,230,.12);
+    color: var(--primary);
+    font-size: 1.35rem;
+}
+.dashboard-stat:hover,
+.expert-card:hover,
+.shadow-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 1rem 2rem rgba(31, 41, 55, .12) !important;
+}
+.dashboard-stat,
+.expert-card,
+.shadow-hover {
+    transition: all .25s ease;
+}
+.profile-photo {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+}
+.timeline-item {
+    position: relative;
+    padding-left: 1rem;
+    border-left: 3px solid rgba(36,65,230,.2);
+}
+.fade-in {
+    animation: fadeIn .5s ease;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 991.98px) {
+    #wrapper {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+    }
+}
