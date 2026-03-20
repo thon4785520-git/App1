@@ -9,9 +9,10 @@ body {
     background: var(--soft);
     color: #22304a;
 }
-.auth-body {
-    min-height: 100vh;
-    background: linear-gradient(135deg, rgba(36,65,230,.95), rgba(0,169,165,.85));
+.auth-screen {
+    min-height: calc(100vh - 72px);
+    display: flex;
+    align-items: center;
 }
 .auth-card,
 .card {
@@ -51,16 +52,16 @@ body {
     color: var(--primary);
     font-size: 1.35rem;
 }
+.dashboard-stat,
+.expert-card,
+.shadow-hover {
+    transition: all .25s ease;
+}
 .dashboard-stat:hover,
 .expert-card:hover,
 .shadow-hover:hover {
     transform: translateY(-4px);
     box-shadow: 0 1rem 2rem rgba(31, 41, 55, .12) !important;
-}
-.dashboard-stat,
-.expert-card,
-.shadow-hover {
-    transition: all .25s ease;
 }
 .profile-photo {
     width: 180px;
@@ -68,7 +69,6 @@ body {
     object-fit: cover;
 }
 .timeline-item {
-    position: relative;
     padding-left: 1rem;
     border-left: 3px solid rgba(36,65,230,.2);
 }
@@ -80,11 +80,7 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 @media (max-width: 991.98px) {
-    #wrapper {
-        flex-direction: column;
-    }
-    .sidebar {
-        width: 100%;
-        min-height: auto;
-    }
+    #wrapper { flex-direction: column; }
+    .sidebar { width: 100%; min-height: auto; }
+    .auth-screen { min-height: auto; padding: 2rem 0; }
 }

@@ -58,10 +58,21 @@ CREATE TABLE training (
     course_name VARCHAR(255) NOT NULL,
     provider_name VARCHAR(255) NULL,
     certificate_name VARCHAR(255) NULL,
+    certificate_file VARCHAR(255) NULL,
     start_date DATE NULL,
     end_date DATE NULL,
     description TEXT NULL,
     CONSTRAINT fk_training_expert FOREIGN KEY (expert_id) REFERENCES experts(id) ON DELETE CASCADE
+);
+
+CREATE TABLE seminars (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    expert_id BIGINT UNSIGNED NOT NULL,
+    seminar_name VARCHAR(255) NOT NULL,
+    organizer_name VARCHAR(255) NULL,
+    joined_date DATE NULL,
+    description TEXT NULL,
+    CONSTRAINT fk_seminars_expert FOREIGN KEY (expert_id) REFERENCES experts(id) ON DELETE CASCADE
 );
 
 CREATE TABLE awards (

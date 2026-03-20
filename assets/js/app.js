@@ -10,10 +10,11 @@ if (skillInput && suggestionBox) {
       suggestionBox.innerHTML = '';
       return;
     }
+
     debounce = setTimeout(async () => {
-      const response = await fetch(`/api/skills/search?q=${encodeURIComponent(query)}`);
+      const response = await fetch(`api/skills.php?q=${encodeURIComponent(query)}`);
       const data = await response.json();
-      suggestionBox.innerHTML = data.data.map(item => `<span class="badge badge-light border mr-1">${item.name}</span>`).join('');
+      suggestionBox.innerHTML = data.data.map((item) => `<span class="badge badge-light border mr-1">${item.name}</span>`).join('');
     }, 250);
   });
 }

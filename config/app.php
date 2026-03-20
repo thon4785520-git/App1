@@ -2,11 +2,9 @@
 
 declare(strict_types=1);
 
-const APP_NAME = 'ระบบฐานข้อมูลผู้เชี่ยวชาญ มหาวิทยาลัยราชภัฏสงขลา';
-const APP_URL = 'http://localhost';
-const BASE_PATH = __DIR__ . '/..';
-
 return [
+    'app_name' => 'ระบบฐานข้อมูลผู้เชี่ยวชาญ มหาวิทยาลัยราชภัฏสงขลา',
+    'base_url' => 'http://localhost',
     'db' => [
         'host' => '127.0.0.1',
         'port' => '3306',
@@ -15,4 +13,5 @@ return [
         'password' => '',
         'charset' => 'utf8mb4',
     ],
+    'pagination' => 6,
 ];
